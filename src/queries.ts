@@ -219,7 +219,7 @@ function messageBridge() {
 
     // Bridge has responded successfully, and there's no error.
 
-    kernelSource = document.querySelector("iframe")?.contentWindow;
+    kernelSource = document.querySelector("iframe")?.contentWindow as Window;
     kernelOrigin = kernelSource.origin;
     kernelAuthLocation = "http://kernel.skynet/auth.html";
     console.log(
