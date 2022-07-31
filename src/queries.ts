@@ -220,7 +220,7 @@ function messageBridge() {
     // Bridge has responded successfully, and there's no error.
 
     kernelSource = document.querySelector("iframe")?.contentWindow as Window;
-    kernelOrigin = kernelSource.origin;
+    kernelOrigin = "http://kernel.skynet";
     kernelAuthLocation = "http://kernel.skynet/auth.html";
     console.log(
       "established connection to bridge, using browser extension for kernel"
