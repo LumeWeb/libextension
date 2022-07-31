@@ -24,6 +24,8 @@ interface queryMap {
   };
 }
 
+declare var browser: any;
+
 // Create the queryMap.
 let queries: queryMap = {};
 
@@ -486,6 +488,7 @@ function newKernelQuery(
             method: "queryUpdate",
             nonce,
             data: updateData,
+            domain: browser.runtime.id,
           },
           kernelOrigin
         );
@@ -505,6 +508,7 @@ function newKernelQuery(
         nonce,
         data,
         sendKernelNonce: sendUpdates,
+        domain: browser.runtime.id,
       };
 
       kernelSource.postMessage(kernelMessage, kernelOrigin);
