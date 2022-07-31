@@ -1,0 +1,10 @@
+import { DataFn, Err, ErrTuple } from "libskynet";
+declare let kernelAuthLocation: string;
+declare let loginPromise: Promise<void>;
+declare let kernelLoadedPromise: Promise<Err>;
+declare let logoutPromise: Promise<void>;
+declare function init(): Promise<void>;
+declare function callModule(module: string, method: string, data?: any): Promise<ErrTuple>;
+declare function connectModule(module: string, method: string, data: any, receiveUpdate: DataFn): [sendUpdate: DataFn, response: Promise<ErrTuple>];
+declare function newKernelQuery(method: string, data: any, sendUpdates: boolean, receiveUpdate?: DataFn): [sendUpdate: DataFn, response: Promise<ErrTuple>];
+export { callModule, connectModule, init, kernelAuthLocation, kernelLoadedPromise, loginPromise, logoutPromise, newKernelQuery, };
